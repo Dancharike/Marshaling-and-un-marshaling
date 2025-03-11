@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<student>
+    <id>1</id>
+    <name>Denis</name>
+    <age>20</age>
+    <gpa>3.5</gpa>
+    <isGraduated>false</isGraduated>
+    <gender>77</gender>
+    <subjects>
+        <subject>
+            <subjectId>1</subjectId>
+            <credits>6</credits>
+            <subjectName>IS</subjectName>
+            <grade>57</grade>
+        </subject>
+        <subject>
+            <subjectId>2</subjectId>
+            <credits>6</credits>
+            <subjectName>Web Services</subjectName>
+            <grade>57</grade>
+        </subject>
+        <subject>
+            <subjectId>3</subjectId>
+            <credits>3</credits>
+            <subjectName>Multi-threaded Programming</subjectName>
+            <grade>57</grade>
+        </subject>
+    </subjects>
+</student>
