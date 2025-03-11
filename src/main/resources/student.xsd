@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="student" type="studentType"/>
+  <xs:complexType name="subjectType">
+    <xs:sequence>
+      <xs:element name="subjectId">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+            <xs:enumeration value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="credits">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="6"/>
+            <xs:enumeration value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="subjectName">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="IS"/>
+            <xs:enumeration value="Web Services"/>
+            <xs:enumeration value="Multi-threaded Programming"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="grade"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subjectsType">
+    <xs:sequence>
+      <xs:element type="subjectType" name="subject" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="studentType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="id"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="age"/>
+      <xs:element type="xs:string" name="gpa"/>
+      <xs:element type="xs:string" name="isGraduated"/>
+      <xs:element type="xs:string" name="gender"/>
+      <xs:element type="subjectsType" name="subjects"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

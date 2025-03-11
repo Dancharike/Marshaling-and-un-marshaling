@@ -12,7 +12,7 @@ public class Student
     private int age;
     private double gpa;
     private boolean isGraduated;
-    private char gender;
+    private String gender;
     @XmlElementWrapper(name = "subjects")
     @XmlElement(name = "subject")
     private List<Subject> subjects;
@@ -20,7 +20,7 @@ public class Student
     // JAXB thing
     public Student() {}
 
-    public Student(int id, String name, int age, double gpa, boolean isGraduated, char gender, List<Subject> subjects)
+    public Student(int id, String name, int age, double gpa, boolean isGraduated, String gender, List<Subject> subjects)
     {
         this.id = id;
         this.name = name;

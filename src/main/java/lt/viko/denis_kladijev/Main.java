@@ -14,7 +14,7 @@ public class Main
         File xsdFile = new File("src/main/resources/student.xsd");
         XMLTransformer transformer = new XMLTransformer(xsdFile);
 
-        Student student = new Student(1, "Denis", 20, 3.5, false, 'M', List.of(
+        Student student = new Student(1, "Denis", 20, 3.5, false, "M", List.of(
                 new Subject(1, 6, "IS", '9'),
                 new Subject(2, 6, "Web Services", '9'),
                 new Subject(3, 3, "Multi-threaded Programming", '9')
