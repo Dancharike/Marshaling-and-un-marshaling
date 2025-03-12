@@ -24,6 +24,23 @@ public class Subject
         this.grade = grade;
     }
 
+    public int getSubjectId() {
+        return subjectId;
+    }
+
+    public int getCredits() {
+        return credits;
+    }
+
+    public String getSubjectName() {
+        return subjectName;
+    }
+
+    public char getGrade() {
+        return grade;
+    }
+
+
     @Override
     public String toString()
     {

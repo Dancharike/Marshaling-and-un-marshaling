@@ -7,6 +7,10 @@ import lt.viko.denis_kladijev.transform.XMLTransformer;
 import java.io.File;
 import java.util.List;
 
+/**
+ * Moin class is not really needed in here, i just used it for checking how system is working
+ */
+
 public class Main
 {
     public static void main(String[] args)
@@ -23,5 +27,7 @@ public class Main
         File outputXml = new File("src/main/resources/student.xml");
         transformer.TransformToXML(student, outputXml);
         Student loadedStudent = transformer.TransformToPOJO(outputXml);
+
+        System.out.println("Loaded student from XML: \n" + loadedStudent);
     }
 }

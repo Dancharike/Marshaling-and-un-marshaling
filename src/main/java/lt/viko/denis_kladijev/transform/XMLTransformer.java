@@ -11,14 +11,31 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import java.io.File;
 
+/**
+ * Class XmlTransformer marshals and unmarshals Student objects to or from XML
+ */
+
 public class XMLTransformer
 {
+    /**
+     * XSD-schema for XML document validation
+     */
     private final File xsdSchemaFile;
 
+    /**
+     * Constructor for XmlTransformer class
+     * @param xsdSchemaFile XSD schema file for XML validation
+     */
     public XMLTransformer(File xsdSchemaFile)
     {
         this.xsdSchemaFile = xsdSchemaFile;
     }
+
+    /**
+     * Transforms object Student into XML document and saves it to files
+     * @param student object Student for transform
+     * @param outputFile file where XML is saved
+     */
 
     public void TransformToXML(Student student, File outputFile)
     {
@@ -43,6 +60,13 @@ public class XMLTransformer
             e.printStackTrace();
         }
     }
+
+    /**
+     * Transforms XML file back to object Student
+     * XML is checked by XSD schema
+     * @param xmlFile XML file with all the data
+     * @return object student received from XML
+     */
 
     public Student TransformToPOJO(File xmlFile)
     {

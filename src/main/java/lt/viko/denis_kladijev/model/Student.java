@@ -31,6 +31,35 @@ public class Student
         this.subjects = subjects;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public double getGpa() {
+        return gpa;
+    }
+
+    public boolean isGraduated() {
+        return isGraduated;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public List<Subject> getSubjects() {
+        return subjects;
+    }
+
+
     @Override
     public String toString() {
         return "Student{" +
