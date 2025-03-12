@@ -16,7 +16,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class XmlTransformerTest
 {
-    private static final String testXmlFile = "src/test/resources/test_student.xml";
     private static final String xsdFilePath = "src/main/resources/student.xsd";
     private XMLTransformer transformer;
     private Student testStudent;
@@ -26,25 +25,30 @@ public class XmlTransformerTest
     {
         transformer = new XMLTransformer(new File(xsdFilePath));
         testStudent = new Student(100, "Test Student", 25, 4, true, "M", List.of(
-                new Subject(4, 3, "Sociology", '9'),
-                new Subject(5, 3, "BMS", '8')
+                new Subject(1, 6, "IS", 'A'),
+                new Subject(2, 6, "Web Services", 'B')
         ));
     }
 
     @Test
     void TestTransformToXML()
     {
-        File outputFile = new File(testXmlFile);
+        String tmpDir = System.getProperty("java.io.tmpdir");
+        File outputFile = new File(tmpDir, "test_student.xml");
         transformer.TransformToXML(testStudent, outputFile);
 
+        // check if the file is really existing
         assertTrue(outputFile.exists(), "XML file does not exist");
         assertTrue(outputFile.length() > 0, "XML file is empty");
+
+        System.out.println("XML file is created" + outputFile.getAbsolutePath());
     }
 
     @Test
     void TestTransformToPOJO()
     {
-        File xmlFile = new File(testXmlFile);
+        String tmpDir = System.getProperty("java.io.tmpdir");
+        File xmlFile = new File(tmpDir, "test_student.xml");
         transformer.TransformToXML(testStudent, xmlFile);
 
         Student loadedStudent = transformer.TransformToPOJO(xmlFile);
